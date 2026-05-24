@@ -133,8 +133,9 @@ const About = () => {
               </p>
 
               <a
-                href="/David_Graham_CV.pdf"
-                download
+                href="https://docs.google.com/document/d/1biPCPdQyFY96x-CPZhEOVnmX3jqblpLe/edit?usp=sharing&ouid=106069471756918728290&rtpof=true&sd=true"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-gold border-opacity-60 text-gold px-6 py-3 rounded font-bold text-sm hover:bg-gold hover:text-navy transition-all duration-200 self-start"
               >
                 Download CV

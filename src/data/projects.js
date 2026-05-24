@@ -1,0 +1,40 @@
+export const projects = [
+	{
+		id: 'solar-radiation-prediction',
+		title: 'Solar Radiation Prediction',
+		subtitle: 'ML Web Application',
+		description: 'A machine learning model that predicts solar radiation levels based on environmental variables such as temperature, solar zenith angle, and sky conditions. Deployed as a user-facing web application with real-time predictions.',
+		stack: ['Python', 'Scikit-Learn', 'Flask', 'Pandas', 'NumPy'],
+		type: 'AI & ML',
+		year: '2024',
+		github: 'https://github.com/KwesiGray',
+		live: null,
+		featured: true,
+	},
+	{
+		id: 'ai-chatbot-companion',
+		title: 'AI Chatbot Companion',
+		subtitle: 'University Enrollment Guide',
+		description: 'An interactive AI chatbot designed to assist prospective students seeking to enroll in the University of Mines and Technology. Built using LLM concepts and NLP techniques to deliver contextually accurate conversational responses.',
+		stack: ['Python', 'LLMs', 'NLP', 'Flask'],
+		type: 'AI & ML',
+		year: '2024',
+		github: 'https://github.com/KwesiGray',
+		live: null,
+		featured: true,
+	},
+	{
+		id: 'iot-smart-helmet',
+		title: 'IoT Smart Helmet',
+		subtitle: 'Mining Safety System & Mobile App',
+		description: 'A smart helmet system for mining safety featuring real-time air quality monitoring, audible helmet-wear reminders, and incident reporting. Integrated sensor data pipelines with a mobile application.',
+		stack: ['IoT', 'Mobile App', 'REST APIs', 'Sensors'],
+		type: 'IoT',
+		year: '2023',
+		github: 'https://github.com/KwesiGray',
+		live: null,
+		featured: true,
+	},
+]
+
+export default projects

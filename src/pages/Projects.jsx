@@ -1,4 +1,4 @@
-const Home = () => {
+const Projects = () => {
   return <div className="min-h-screen" />
 }
-export default Home
+export default Projects
