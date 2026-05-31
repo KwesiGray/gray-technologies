@@ -1,7 +1,6 @@
-// Handle GitHub Pages redirect
-const path = new URLSearchParams(window.location.search).get('path');
+const path = new URLSearchParams(window.location.search).get('path')
 if (path) {
-  window.history.replaceState(null, '', path);
+  window.history.replaceState(null, '', '/gray-technologies' + path)
 }
 
 import { StrictMode } from 'react'
