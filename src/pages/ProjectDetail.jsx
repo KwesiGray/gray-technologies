@@ -132,7 +132,7 @@ const ProjectDetail = () => {
               {project.fullDescription.map((paragraph, index) => (
                 <p
                   key={index}
-                  className="text-offwhite opacity-65 text-base leading-relaxed"
+                  className="text-offwhite opacity-85 text-base leading-relaxed"
                 >
                   {paragraph}
                 </p>
