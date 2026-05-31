@@ -29,7 +29,7 @@ const About = () => {
   const timeline = [
     {
       year: "2025",
-      title: "National Service — GPHA",
+      title: "National Service - GPHA",
       sub: "Apps Unit · Odoo, Python, PostgreSQL",
       current: true,
     },
@@ -41,7 +41,7 @@ const About = () => {
     },
     {
       year: "2024",
-      title: "Software Engineer Intern — CTSL",
+      title: "Software Engineer Intern - CTSL",
       sub: "Certified Technology Service Limited, Takoradi",
       current: false,
     },

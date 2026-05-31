@@ -43,7 +43,7 @@ const Certifications = () => {
       title: 'BSc. Computer Science & Engineering',
       issuer: 'University of Mines and Technology',
       mentor: 'Tarkwa, Ghana',
-      date: '2025',
+      date: 'Dec 2025',
       credential: null,
       highlights: [
         'Machine Learning & AI',
