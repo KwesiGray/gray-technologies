@@ -394,7 +394,7 @@ const Hero = () => {
                     Currently
                   </div>
                   <div className="text-offwhite text-sm font-medium mt-1">
-                    National Service @ GPHA
+                    National Service Personnel @ G.P.H.A
                   </div>
                   <div className="text-gold text-xs opacity-70 mt-0.5">
                     I.T Department — Apps Unit

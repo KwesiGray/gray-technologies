@@ -1,0 +1,55 @@
+const posts = [
+  {
+    slug: 'getting-started-with-machine-learning',
+    title: 'Getting Started with Machine Learning in Python',
+    excerpt: 'A practical introduction to machine learning concepts and how to build your first model using Scikit-Learn and Python.',
+    content: [
+      'Machine learning is one of the most transformative technologies of our time but getting started can feel overwhelming. In this post I want to break it down into simple, actionable steps based on my own experience learning and applying ML.',
+      'The first thing to understand is that machine learning is just pattern recognition at scale. You feed a model examples of inputs and outputs, and it learns the relationship between them. That relationship can then be used to make predictions on new, unseen data.',
+      'Python is the language of machine learning. The two libraries you need to start are NumPy for numerical computation and Scikit-Learn for machine learning algorithms and some cases pandas for data manipulation, read of CSV files and what have you. Install them with: pip install numpy scikit-learn pandas matplotlib...etc',
+      'Start with supervised learning specifically regression and classification. Regression predicts a number (like solar radiation levels in my own project). Classification predicts a category (like whether an email is spam or not).',
+      'The most important skill in ML is not picking the right algorithm it is understanding your data. Spend 80% of your time on data exploration, cleaning, and feature engineering. The model is almost secondary.',
+      'My advice: pick a real dataset that interests you, define a clear prediction goal, and build something end to end. Even a simple model deployed as a Flask API teaches you more than reading ten textbooks. Hands-on experience is the best teacher in machine learning.',
+    ],
+    tags: ['Machine Learning', 'Python', 'Beginner'],
+    date: 'April 2026',
+    readTime: '5 min read',
+    featured: true,
+  },
+  {
+    slug: 'what-is-an-llm',
+    title: 'What is a Large Language Model and How Does it Work?',
+    excerpt: 'Breaking down LLMs in plain English what they are, how transformers work, and why they matter for software developers.',
+    content: [
+      'Large Language Models LLMs are the technology behind tools like ChatGPT, Claude, and GitHub Copilot. As a software developer, understanding how they work gives you a significant edge in building AI-powered products.',
+      'At the core of every LLM is the transformer architecture, introduced by Google in the 2017 paper "Attention is All You Need." The key innovation was the attention mechanism a way for the model to weigh the importance of different words in a sentence relative to each other.',
+      'LLMs are trained on massive amounts of text data books, websites, code, articles. During training, the model learns to predict the next word in a sequence. Through billions of these predictions, it builds a deep statistical understanding of language, facts, and reasoning patterns.',
+      'When you send a prompt to an LLM, it processes your entire input and generates a response token by token one word or word-fragment at a time. Each token is chosen based on the probability distribution the model has learned during training.',
+      'For developers, the most practical way to work with LLMs is through APIs. You send a prompt, you receive a completion. Prompt engineering the art of crafting effective prompts is a genuinely valuable skill that significantly affects output quality.',
+      'The field is moving fast. My recommendation is to build something practical with an LLM API today a chatbot, a summarizer, a code reviewer. Hands-on experience teaches you the real capabilities and limitations faster than anything else.',
+    ],
+    tags: ['LLMs', 'AI', 'Transformers'],
+    date: 'March 2026',
+    readTime: '6 min read',
+    featured: true,
+  },
+  {
+    slug: 'odoo-development-lessons',
+    title: 'What 6 Months+ of Odoo Development at GPHA Taught Me',
+    excerpt: 'Lessons from building and maintaining enterprise ERP software on live production systems at the Ghana Ports and Harbours Authority.',
+    content: [
+      'Six months into my national service at the Ghana Ports and Harbours Authority, working in the Apps Unit, I have learned more about real-world software development than I expected. Here are the lessons that stand out.',
+      'Enterprise software is unforgiving. Unlike personal projects where a bug just affects you, a bug in a production Odoo module can disrupt port operations. This reality forces you to think carefully before every change and test thoroughly before every deployment.',
+      'The Odoo framework is opinionated and powerful. It follows a strict MVC architecture where models map directly to PostgreSQL tables via an ORM, views are defined in XML, and business logic lives in Python methods. Once you understand the pattern, productivity increases significantly.',
+      'PostgreSQL became my best friend. Writing raw SQL queries to debug data issues, optimizing slow queries, and understanding how the ORM translates Python to SQL has made me a significantly better backend developer.',
+      'Code reviews and documentation matter more in teams than in solo projects. When you change a module that other developers depend on, clear commit messages and inline documentation are not optional they are professional responsibilities.',
+      'My biggest takeaway: there is no substitute for working on a live system with real consequences. The pressure makes you a better engineer faster than any course or tutorial ever could.',
+    ],
+    tags: ['Odoo', 'Python', 'Enterprise', 'Career'],
+    date: 'February 2026',
+    readTime: '7 min read',
+    featured: true,
+  },
+]
+
+export default posts
