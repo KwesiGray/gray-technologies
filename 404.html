@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gray Technologies</title>
     <script>
-      var path = window.location.pathname;
+      var path = window.location.pathname.replace('/gray-technologies', '');
       window.location.replace(
-        window.location.origin + '/?path=' + encodeURIComponent(path)
+        window.location.origin + '/gray-technologies/?path=' + encodeURIComponent(path)
       );
     </script>
   </head>
