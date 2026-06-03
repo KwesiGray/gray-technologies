@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useRef, useState, useEffect } from 'react'
+import { motion, useInView} from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import { Mail, MapPin,GitBranch,ExternalLink, Send, CheckCircle, AlertCircle } from 'lucide-react'
 
-const SERVICE_ID = 'service_w9my40b'
-const TEMPLATE_ID = 'template_uyy1dsm'
-const PUBLIC_KEY = 'Y7EP98XTZuDCNigUg'
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const Contact = () => {
 
@@ -20,6 +20,16 @@ const Contact = () => {
 
   const [status, setStatus] = useState('idle')
 
+  useEffect(() => {
+    if (PUBLIC_KEY) {
+      try {
+        emailjs.init(PUBLIC_KEY)
+      } catch{
+        // ignore init errors; send will still accept public key
+      }
+    }
+  }, [])
+
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 }
@@ -30,19 +40,27 @@ const Contact = () => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('loading')
+  e.preventDefault()
+  setStatus('loading')
 
-    try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, {
-        publicKey: PUBLIC_KEY,
-      })
-      setStatus('success')
-      setFormData({ from_name: '', from_email: '', message: '' })
-    } catch {
-      setStatus('error')
-    }
+  try {
+    await emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      {
+        from_name: formData.from_name,
+        from_email: formData.from_email,
+        message: formData.message,
+      },
+      PUBLIC_KEY
+    )
+    setStatus('success')
+    setFormData({ from_name: '', from_email: '', message: '' })
+  } catch (error) {
+    console.error('Email send error:', error)
+    setStatus('error')
   }
+}
 
   const contactInfo = [
     {
@@ -75,7 +93,7 @@ const Contact = () => {
     <section ref={ref} id="contact" className="relative py-24 px-6">
 
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] rounded-full bg-gold opacity-3 blur-[120px]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] rounded-full bg-gold opacity-30 blur-[120px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -172,7 +190,7 @@ const Contact = () => {
                   value={formData.from_name}
                   onChange={handleChange}
                   required
-                  placeholder="David Graham"
+                  placeholder="John Doe"
                   className="bg-navy-light border border-offwhite border-opacity-10 rounded-xl px-4 py-3 text-offwhite text-sm placeholder-offwhite placeholder-opacity-20 focus:outline-none focus:border-gold focus:border-opacity-50 transition-colors duration-200"
                 />
               </div>
@@ -187,7 +205,7 @@ const Contact = () => {
                   value={formData.from_email}
                   onChange={handleChange}
                   required
-                  placeholder="you@example.com"
+                  placeholder="jdoe@gmail.com"
                   className="bg-navy-light border border-offwhite border-opacity-10 rounded-xl px-4 py-3 text-offwhite text-sm placeholder-offwhite placeholder-opacity-20 focus:outline-none focus:border-gold focus:border-opacity-50 transition-colors duration-200"
                 />
               </div>
